@@ -1,0 +1,15 @@
+<html>
+I am vm
+<pre>
+#*
+*注释
+*#
+    $!{value1}
+    $!{value2}##如果不存在强制为空
+    colors:$!{colors}
+
+    #foreach($color in $colors)
+        this is Color: $color
+    #end
+</pre>
+</html>

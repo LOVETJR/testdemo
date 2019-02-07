@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+I am vm.html
+<pre>
+#*
+*注释
+*#
+    $!{value1}
+    $!{value2}##如果不存在强制为空
+    colors:$!{colors}
+
+    #foreach($color in $colors)
+        this is Color $!{foreach.index}: $color,$!{foreach.count}
+    #end
+
+    #foreach($key in $map.keySet())
+    Number: $key, Value: $map.get($key)
+    #end
+
+    #foreach($kv in $map.entrySet())
+    Number: $kv.key, Value: $kv.value
+    #end
+
+    User: $!{user.name}
+    $!{user.description}
+    $!{user.getDescription()}
+
+    #set($tittle="Sport")
+    Tittle: $!{tittle}
+
+    Parse: #parse("header.html")
+    Include: #include("header.html")
+
+    #*宏定义*#
+    #macro(render_color,$index,$color)
+        Color Render Macro $index,$color
+    #end
+
+     #foreach($color in $colors)
+            #render_color($foreach.index,$color)
+      #end
+</pre>
+</body>
+</html>
