@@ -6,6 +6,7 @@
 </head>
 <body>
 I am vm.html
+First successful push to github
 <pre>
 #*
 *注释
@@ -44,6 +45,15 @@ I am vm.html
      #foreach($color in $colors)
             #render_color($foreach.index,$color)
       #end
+      #set($hello="hello")
+      #set($helloworld1="$!{hello} world!")
+      #set($helloworld2='$!{hello} world')#*单引号无法解析*#
+
+      $!hello
+      $helloworld1
+      $!helloworld1
+      $!{helloworld1}
+      $helloworld2
 </pre>
 </body>
 </html>
